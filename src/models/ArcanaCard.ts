@@ -58,7 +58,7 @@ export class ArcanaCard {
 
   /** Path (no extension) relative to the public directory used for the card artwork. */
   private get imageBase(): string {
-    return `${import.meta.env.BASE_URL}cards/${this.name}`;
+    return `${import.meta.env.BASE_URL}cards/${encodeURIComponent(this.name)}`;
   }
 
   /** Modern AVIF source. Falls back to WebP where AVIF isn't available/supported. */
